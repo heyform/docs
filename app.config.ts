@@ -46,12 +46,22 @@ export default defineAppConfig({
       links: [{
         title: 'Star on GitHub',
         icon: 'lucide:star',
-        to: 'https://github.com/heyform/heyform',
+        to: 'https://go.heyform.net/github',
         target: '_blank',
       }, {
         title: 'Create Issues',
         icon: 'lucide:circle-dot',
-        to: 'https://github.com/heyform/heyform/issues',
+        to: 'https://go.heyform.net/issue',
+        target: '_blank',
+      }, {
+        title: 'Chat on Discord',
+        icon: 'simple-icons:discord',
+        to: 'https://go.heyform.net/discord',
+        target: '_blank',
+      }, {
+        title: 'Become a Sponsor',
+        icon: 'lucide:hand-heart',
+        to: 'https://go.heyform.net/sponsor',
         target: '_blank',
       }],
     },

@@ -44,6 +44,7 @@
     "nuxt": "^3.12.2",
     "radix-vue": "^1.8.5",
     "shadcn-nuxt": "^0.10.4",
+    "sharp": "^0.33.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.2",
@@ -52,6 +53,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.21.1",
+    "@iconify-json/heroicons": "^1.1.21",
     "@iconify-json/lucide": "^1.1.195",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
