@@ -10,6 +10,14 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
   ],
+  image: {
+    quality: 100,
+    ipx: {
+      sharpOptions: {
+        limitInputPixels: 0
+      }
+    }
+  },
   shadcn: {
     /**
      * Prefix for all the imported component

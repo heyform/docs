@@ -1,9 +1,9 @@
 <template>
   <div class="[&:not(:first-child)]:mt-5 group-has-[div]:mt-4">
-    <NuxtLink :to="to" :target="target">
-      <UiCard class="transition-all relative" :class="[to && 'hover:bg-muted']">
+    <NuxtLink class="h-full" :to="to" :target="target">
+      <UiCard class="h-full transition-all relative" :class="[to && 'hover:bg-muted']">
         <UiCardHeader v-if="icon || title || $slots.title || description || $slots.description">
-          <Icon v-if="icon" class="my-4" :name="icon" size="32" />
+          <Icon v-if="icon" class="mb-1.5" :name="icon" size="24" />
           <UiCardTitle v-if="title || $slots.title">
             <ContentSlot :use="$slots.title" unwrap="p" />
             {{ title }}
