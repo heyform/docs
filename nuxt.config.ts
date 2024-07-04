@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
   ],
+  plugins: [
+    './plugins/medium-zoom.client.ts'
+  ],
   image: {
     quality: 100,
     ipx: {
