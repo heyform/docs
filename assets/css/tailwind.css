@@ -89,3 +89,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.medium-zoom-overlay {
+  @apply bg-white/90 dark:bg-black/90;
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image {
+  @apply z-50;
+}
