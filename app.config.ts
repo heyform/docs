@@ -68,6 +68,6 @@ export default defineAppConfig({
     search: {
       enable: true,
       inAside: false,
-    }
-  }
+    },
+  },
 });

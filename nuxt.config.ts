@@ -11,15 +11,15 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
   plugins: [
-    './plugins/medium-zoom.client.ts'
+    './plugins/medium-zoom.client.ts',
   ],
   image: {
     quality: 100,
     ipx: {
       sharpOptions: {
-        limitInputPixels: 0
-      }
-    }
+        limitInputPixels: 0,
+      },
+    },
   },
   shadcn: {
     /**

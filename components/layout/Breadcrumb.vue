@@ -3,8 +3,10 @@
     <UiBreadcrumbList>
       <template v-for="(breadcrumb, index) in breadcrumbs" :key="breadcrumb.title">
         <UiBreadcrumbItem>
-          <UiBreadcrumbLink class="capitalize" :href="breadcrumb.href"
-            :class="{ 'text-foreground': index === breadcrumbs.length - 1 }">
+          <UiBreadcrumbLink
+            class="capitalize" :href="breadcrumb.href"
+            :class="{ 'text-foreground': index === breadcrumbs.length - 1 }"
+          >
             {{ breadcrumb.title }}
           </UiBreadcrumbLink>
         </UiBreadcrumbItem>

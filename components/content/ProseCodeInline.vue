@@ -1,7 +1,7 @@
 <template>
   <code class="relative rounded-sm bg-muted px-1.5 py-1 font-mono inline-code">
-                  <slot />
-                </code>
+    <slot />
+  </code>
 </template>
 
 <style scoped>
