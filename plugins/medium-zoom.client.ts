@@ -3,11 +3,11 @@ import { useDebounceFn } from '@vueuse/core';
 import { defineNuxtPlugin } from '#app';
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const selector = '[data-zoomable]';
+  const selector = '.docs-content img';
   const innerWidth = window.innerWidth;
 
   const zoom = mediumZoom(selector, {
-    margin: innerWidth < 640 ? 12 : innerWidth < 1024 ? 24 : innerWidth < 1536 ? 96 : 192,
+    margin: innerWidth < 640 ? 12 : innerWidth < 1024 ? 24 : 48,
     background: '',
   });
 
@@ -15,7 +15,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const debouncedFn = useDebounceFn(() => {
     const innerWidth = window.innerWidth;
     zoom?.update({
-      margin: innerWidth < 640 ? 12 : innerWidth < 1024 ? 24 : innerWidth < 1536 ? 96 : 192,
+      margin: innerWidth < 640 ? 12 : innerWidth < 1024 ? 24 : 48,
     });
   }, 200);
 
