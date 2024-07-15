@@ -1,15 +1,16 @@
 {
-  "name": "shadcn-docs-nuxt",
+  "name": "@heyform/docs",
   "type": "module",
   "version": "0.3.2",
-  "author": "Tony Zhang <zhangtianli2006@gmail.com>",
+  "author": "Heyooo, Inc.",
+  "private": true,
   "license": "MIT",
-  "homepage": "https://shadcn-docs.nuxt.dev/",
+  "homepage": "https://docs.heyform.net",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZTL-UwU/shadcn-docs-nuxt.git"
+    "url": "git+https://github.com/heyform/docs.git"
   },
-  "bugs": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues",
+  "bugs": "https://github.com/heyform/docs/issues",
   "main": "./nuxt.config.ts",
   "files": [
     "app",
