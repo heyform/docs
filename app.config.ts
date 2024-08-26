@@ -29,7 +29,7 @@ export default defineAppConfig({
       collapse: false,
     },
     main: {
-      breadCrumb: true,
+      breadCrumb: false,
       showTitle: true,
     },
     footer: {
