@@ -23,6 +23,11 @@ useSeoMeta({
 });
 
 useServerHead({
+  link: [{ 
+    rel: 'stylesheet', 
+    href: 'https://rsms.me/inter/inter.css',
+    crossorigin: ''
+  }],
   htmlAttrs: {
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,

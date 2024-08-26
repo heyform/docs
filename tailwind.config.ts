@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 import animate from 'tailwindcss-animate';
 
 export default {
@@ -7,6 +8,15 @@ export default {
   prefix: '',
   content: [],
   theme: {
+    fontFamily: {
+      ...defaultTheme.fontFamily,
+      sans: [
+        ['Inter', ...defaultTheme.fontFamily.sans],
+        {
+          fontFeatureSettings: '"cv11"'
+        }
+      ]
+    },
     container: {
       center: true,
       padding: '2rem',
