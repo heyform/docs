@@ -775,5 +775,5 @@ html.dark {
 }
 
 img {
-    @apply rounded-lg shadow-xl my-16;
+    @apply rounded-lg my-8;
 }

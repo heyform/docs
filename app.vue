@@ -32,5 +32,12 @@ useServerHead({
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,
   },
+  script: [
+    {
+      src: 'https://analytics.heyform.net/js/script.js',
+      defer: true,
+      'data-domain': 'heyform.net',
+    },
+  ],
 });
 </script>
