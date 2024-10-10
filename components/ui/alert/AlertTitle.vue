@@ -1,5 +1,5 @@
 <template>
-  <h5 :class="cn('mb-1 font-medium leading-none tracking-tight', props.class)">
+  <h5 :class="cn('mt-2 mb-2 text-xl font-medium leading-none tracking-tight', props.class)">
     <slot />
   </h5>
 </template>

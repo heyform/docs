@@ -12,15 +12,15 @@ export default defineAppConfig({
     header: {
       title: 'HeyForm Help Center',
       showTitle: true,
-      darkModeToggle: true,
+      darkModeToggle: false,
       logo: {
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
       nav: [],
       links: [{
-        icon: 'lucide:github',
-        to: 'https://github.com/heyform/docs',
+        icon: 'simple-icons:discord',
+        to: 'https://go.heyform.net/discord',
         target: '_blank',
       }],
     },

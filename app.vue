@@ -23,8 +23,8 @@ useSeoMeta({
 });
 
 useServerHead({
-  link: [{ 
-    rel: 'stylesheet', 
+  link: [{
+    rel: 'stylesheet',
     href: 'https://rsms.me/inter/inter.css',
     crossorigin: ''
   }],

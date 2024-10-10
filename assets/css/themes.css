@@ -8,16 +8,16 @@ html.dark {
 
 .theme-zinc {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 45 7.85% 20%;
 
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 45 7.85% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 45 7.85% 20%;
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
@@ -775,5 +775,5 @@ html.dark {
 }
 
 img {
-    @apply rounded-lg shadow-md;
+    @apply rounded-lg shadow-xl my-16;
 }
