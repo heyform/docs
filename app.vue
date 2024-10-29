@@ -11,6 +11,7 @@ import { ConfigProvider } from 'radix-vue';
 import Toaster from '@/components/ui/toast/Toaster.vue';
 
 const config = useConfig();
+const route = useRoute();
 const { themeClass, radius } = useThemes();
 
 const useIdFunction = () => useId();
@@ -23,11 +24,17 @@ useSeoMeta({
 });
 
 useServerHead({
-  link: [{
-    rel: 'stylesheet',
-    href: 'https://rsms.me/inter/inter.css',
-    crossorigin: ''
-  }],
+  link: [
+    {
+      rel: 'stylesheet',
+      href: 'https://rsms.me/inter/inter.css',
+      crossorigin: ''
+    },
+    {
+      rel: 'canonical',
+      href: 'https://docs.heyform.net' + route.path
+    }
+  ],
   htmlAttrs: {
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,
