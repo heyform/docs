@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  site: {
+    url: 'https://docs.heyform.net',
+    name: 'HeyForm Help Center'
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
@@ -9,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
+    '@nuxtjs/sitemap',
   ],
   plugins: [
     './plugins/medium-zoom.client.ts',
