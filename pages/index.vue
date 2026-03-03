@@ -1,9 +1,10 @@
 <template>
   <LayoutHeader />
-  <div class="container px-4 md:px-8 py-6">
+  <div class="container px-4 md:px-8 py-8 md:py-10">
     <ContentRenderer
       :key="page._id"
       :value="page"
+      class="docs-main-content docs-body"
     />
   </div>
   <LayoutFooter />

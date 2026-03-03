@@ -27,7 +27,7 @@ useServerHead({
   link: [
     {
       rel: 'stylesheet',
-      href: 'https://rsms.me/inter/inter.css',
+      href: 'https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap',
       crossorigin: ''
     },
     {

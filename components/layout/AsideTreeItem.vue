@@ -1,9 +1,9 @@
 <template>
-  <li class="rounded-md transition-all underline-offset-4 [&:not(:first-child)]:pt-3" :class="[level > 0 && 'pl-4']">
+  <li class="transition-colors underline-offset-4 [&:not(:first-child)]:pt-1.5">
     <UiCollapsible v-if="link.children" v-model:open="isOpen">
-      <UiCollapsibleTrigger class="w-full text-left">
-        <div class="w-full flex gap-1">
-          <Icon v-if="link.icon" :name="link.icon" class="self-center mr-1" size="15" />
+      <UiCollapsibleTrigger class="w-full border-l-2 border-transparent px-2 py-1 text-left text-muted-foreground hover:bg-muted/30 hover:text-foreground">
+        <div class="flex w-full gap-1.5">
+          <Icon v-if="link.icon" :name="link.icon" class="self-center" size="14" />
           {{ link.title }}
           <Icon
             :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'" size="12"
@@ -16,10 +16,12 @@
       </UiCollapsibleContent>
     </UiCollapsible>
     <NuxtLink
-      v-else :to="link._path" class="w-full flex hover:underline text-muted-foreground gap-1"
-      :class="[isActive && 'font-medium text-primary']"
+      v-else
+      :to="link._path"
+      class="flex w-full gap-1.5 border-l-2 border-transparent px-2 py-1 text-muted-foreground transition-colors hover:bg-muted/30 hover:text-foreground"
+      :class="[isActive && 'border-l-primary/70 bg-accent/45 font-medium text-foreground']"
     >
-      <Icon v-if="link.icon" :name="link.icon" class="self-center mr-1" size="15" />
+      <Icon v-if="link.icon" :name="link.icon" class="self-center" size="14" />
       {{ link.title }}
     </NuxtLink>
   </li>

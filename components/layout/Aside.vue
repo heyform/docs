@@ -1,14 +1,14 @@
 <template>
-  <UiScrollArea orientation="vertical" class="relative overflow-hidden h-full py-6 pr-6 text-sm" type="hover">
-    <LayoutHeaderNavMobile v-if="isMobile" class="border-b pb-2 mb-5" />
+  <UiScrollArea orientation="vertical" class="relative overflow-hidden h-full py-5 pr-4 text-[13px]" type="hover">
+    <LayoutHeaderNavMobile v-if="isMobile" class="border-b pb-2 mb-4" />
     <LayoutSearchButton v-if="config.search.inAside" />
-    <ul v-if="config.aside.useLevel" class="pb-4 border-b mb-1">
+    <ul v-if="config.aside.useLevel" class="pb-3 border-b mb-2">
       <li v-for="link in navigation" :key="link.id">
         <NuxtLink
           :to="link._path"
-          class="px-3 py-2 mb-1 hover:bg-muted rounded-md w-full flex gap-2 transition-all"
+          class="mb-0.5 flex w-full gap-2 border-l-2 border-transparent px-2 py-1.5 text-muted-foreground transition-colors hover:bg-muted/40 hover:text-foreground"
           :class="[
-            path.startsWith(link._path) && 'bg-muted hover:bg-muted font-semibold text-primary',
+            path.startsWith(link._path) && 'border-l-primary/70 bg-accent/45 font-medium text-foreground',
           ]"
         >
           <Icon
@@ -21,7 +21,7 @@
         </NuxtLink>
       </li>
     </ul>
-    <LayoutAsideTree :links="tree" :level="0" class="pl-3 pt-4" />
+    <LayoutAsideTree :links="tree" :level="0" class="pt-2" />
   </UiScrollArea>
 </template>
 

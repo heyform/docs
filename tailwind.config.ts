@@ -11,7 +11,7 @@ export default {
     fontFamily: {
       ...defaultTheme.fontFamily,
       sans: [
-        ['Inter', ...defaultTheme.fontFamily.sans],
+        ['Public Sans', ...defaultTheme.fontFamily.sans],
         {
           fontFeatureSettings: '"cv11"'
         }

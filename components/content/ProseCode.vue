@@ -1,28 +1,25 @@
 <template>
-  <UiCard
-    class="[&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5 overflow-hidden"
-    :class="[inGroup && 'rounded-t-none border-none mb-0']"
-  >
-    <div v-if="!inGroup && filename" class="p-3 border-b flex text-sm font-mono">
-      <Icon v-if="icon" :name="icon" class="self-center mr-1.5" />
-      {{ filename }}
-      <span class="ml-auto mr-1">
+  <div class="docs-code" :class="[inGroup && 'rounded-none border-x-0 border-b-0 mb-0 mt-0']">
+    <div v-if="!inGroup && filename" class="docs-code__header">
+      <Icon v-if="icon" :name="icon" class="self-center" />
+      <span class="docs-label">{{ filename }}</span>
+      <span class="ml-auto">
         <CodeCopy :code="code" />
       </span>
     </div>
     <UiScrollArea>
       <div
-        class="py-3 bg-muted/30 text-sm relative overflow-x-auto"
-        :class="[`highlight-${language}`, !filename && 'inline-copy', !language && 'pl-3']"
+        class="docs-code__body overflow-x-auto"
+        :class="[`highlight-${language}`, !filename && 'inline-copy']"
       >
-        <span v-if="!filename" class="absolute right-4">
+        <span v-if="!filename" class="docs-copy-button">
           <CodeCopy :code="code" />
         </span>
         <slot />
       </div>
       <ScrollBar orientation="horizontal" />
     </UiScrollArea>
-  </UiCard>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -67,15 +64,43 @@ const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.lan
 }
 
 .shiki .line.highlight {
-  background-color: hsl(var(--muted) / 0.8);
+  background-color: rgb(15 23 42 / 0.9);
 }
 
 .shiki .line {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .inline-copy .line {
-  padding-right: 2.7rem;
+  padding-right: 3.4rem;
+}
+
+.docs-code .shiki,
+.docs-code .shiki span {
+  background: transparent !important;
+}
+
+.docs-code .token.keyword,
+.docs-code .keyword {
+  color: rgb(34 211 238) !important;
+}
+
+.docs-code .token.string,
+.docs-code .string {
+  color: rgb(251 191 36) !important;
+}
+
+.docs-code .token.variable,
+.docs-code .variable,
+.docs-code .token.parameter,
+.docs-code .parameter {
+  color: rgb(251 113 133) !important;
+}
+
+.docs-code .token.comment,
+.docs-code .comment {
+  color: rgb(100 116 139) !important;
+  font-style: italic;
 }
 </style>

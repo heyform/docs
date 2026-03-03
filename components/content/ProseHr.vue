@@ -1,3 +1,3 @@
 <template>
-  <hr>
+  <hr class="my-10 border-border">
 </template>

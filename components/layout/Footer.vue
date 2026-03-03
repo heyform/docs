@@ -1,7 +1,7 @@
 <template>
-  <footer class="text-muted-foreground py-6 md:px-8 md:py-0">
-    <div class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row">
-      <span class="text-sm">
+  <footer class="border-t py-6 text-muted-foreground md:px-8 md:py-0">
+    <div class="container flex flex-col items-center justify-between gap-2 md:h-20 md:flex-row">
+      <span class="text-xs uppercase tracking-wide">
         {{ footer.credits }}
       </span>
       <span class="flex-1" />

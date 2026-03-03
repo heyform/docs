@@ -1,10 +1,10 @@
 <template>
-  <ul :class="[level !== 0 && 'pl-4']">
-    <li v-for="link in links" :key="link.id" class="pt-2">
+  <ul :class="[level !== 0 && 'pl-3']">
+    <li v-for="link in links" :key="link.id" class="py-0.5">
       <NuxtLink
         :to="`#${link.id}`"
-        class="text-muted-foreground hover:text-primary transition-all"
-        :class="[activeHeadings.includes(link.id) && 'text-primary']"
+        class="block border-l-2 border-transparent px-2 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+        :class="[activeHeadings.includes(link.id) && 'border-l-primary/70 bg-accent/40 text-foreground']"
       >
         {{ link.text }}
       </NuxtLink>

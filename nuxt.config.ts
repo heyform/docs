@@ -48,12 +48,12 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
-  css: ['@/assets/css/themes.css'],
+  css: ['@/assets/css/themes.css', '@/assets/css/docs-system.css'],
   content: {
     documentDriven: true,
     highlight: {
       theme: {
-        default: 'github-light',
+        default: 'github-dark',
         dark: 'github-dark',
       },
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],

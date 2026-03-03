@@ -1,5 +1,5 @@
 <template>
-  <h6 :id="id" class="scroll-m-20 text-lg font-semibold tracking-tight [&:not(:first-child)]:mt-6">
+  <h6 :id="id" class="scroll-m-20 text-sm font-medium uppercase tracking-wide text-muted-foreground mt-5">
     <NuxtLink
       v-if="id && generate"
       :href="`#${id}`"

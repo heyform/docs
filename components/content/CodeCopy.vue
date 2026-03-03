@@ -1,20 +1,19 @@
 <template>
-  <span>
+  <button type="button" class="inline-flex h-6 w-6 items-center justify-center rounded-md text-slate-400/80 opacity-70 transition-all duration-200 hover:opacity-100 hover:text-slate-100" aria-label="Copy code" @click="handleClick">
     <Transition name="fade" mode="out-in">
       <Icon
         v-if="copied === false"
         name="lucide:copy"
-        class="self-center cursor-pointer text-muted-foreground hover:text-primary"
-        @click="handleClick"
+        class="self-center"
       />
       <Icon
         v-else
         ref="checkIconRef"
         name="lucide:check"
-        class="self-center cursor-pointer text-muted-foreground hover:text-primary"
+        class="self-center"
       />
     </Transition>
-  </span>
+  </button>
 </template>
 
 <script setup lang="ts">

@@ -2,7 +2,7 @@
   <NuxtLink
     :href="href"
     :target="target"
-    class="underline-offset-4 underline font-semibold"
+    class="text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary/80 hover:decoration-primary"
   >
     <slot />
   </NuxtLink>
