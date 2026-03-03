@@ -66,8 +66,5 @@
     "eslint": "9.2.0",
     "shiki": "^1.9.1",
     "vue-tsc": "^2.0.22"
-  },
-  "optionalDependencies": {
-    "@oxc-parser/binding-linux-x64-gnu": "0.112.0"
   }
 }

@@ -33,7 +33,7 @@ export default defineAppConfig({
       showTitle: true,
     },
     footer: {
-      credits: 'Copyright HeyForm © 2024',
+      credits: 'Copyright HeyForm © 6',
       links: [{
         icon: 'lucide:github',
         to: 'https://github.com/heyform/docs',
