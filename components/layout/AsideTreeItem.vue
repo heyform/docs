@@ -18,8 +18,8 @@
     <NuxtLink
       v-else
       :to="link._path"
-      class="flex w-full gap-1.5 border-l-2 border-transparent px-2 py-1 text-muted-foreground transition-colors hover:bg-muted/30 hover:text-foreground"
-      :class="[isActive && 'border-l-primary/70 bg-accent/45 font-medium text-foreground']"
+      class="flex w-full gap-1.5 px-2 py-1 text-muted-foreground transition-colors hover:bg-muted/30 hover:text-foreground"
+      :class="[isActive && 'bg-accent/45 font-medium text-blue-500']"
     >
       <Icon v-if="link.icon" :name="link.icon" class="self-center" size="14" />
       {{ link.title }}
