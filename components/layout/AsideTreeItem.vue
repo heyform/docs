@@ -19,7 +19,7 @@
       v-else
       :to="link._path"
       class="flex w-full gap-1.5 px-2 py-1 text-muted-foreground transition-colors hover:bg-muted/30 hover:text-foreground"
-      :class="[isActive && 'bg-accent/45 font-medium text-blue-500']"
+      :class="[isActive && 'bg-accent/45 font-medium !text-blue-600']"
     >
       <Icon v-if="link.icon" :name="link.icon" class="self-center" size="14" />
       {{ link.title }}

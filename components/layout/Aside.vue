@@ -8,7 +8,7 @@
           :to="link._path"
           class="mb-0.5 flex w-full gap-2 border-l-2 border-transparent px-2 py-1.5 text-muted-foreground transition-colors hover:bg-muted/40 hover:text-foreground"
           :class="[
-            path.startsWith(link._path) && 'border-l-primary/70 text-blue-500 bg-accent/45 font-medium',
+            path.startsWith(link._path) && 'border-l-blue-600 !text-blue-600 bg-accent/45 font-medium',
           ]"
         >
           <Icon
