@@ -25,7 +25,7 @@ export default defineAppConfig({
       }],
     },
     aside: {
-      useLevel: true,
+      useLevel: false,
       collapse: false,
     },
     main: {

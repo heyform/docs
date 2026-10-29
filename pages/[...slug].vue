@@ -5,7 +5,7 @@
       class="container px-4 md:px-8 flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12"
     >
       <aside
-        class="fixed top-[102px] lg:top-16 lg:mt-12 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block overflow-y-auto border-r bg-muted/10"
+        class="fixed top-[102px] lg:top-16 lg:mt-12 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block overflow-y-auto border-r"
       >
         <LayoutAside :is-mobile="false" />
       </aside>

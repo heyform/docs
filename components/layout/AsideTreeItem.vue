@@ -1,27 +1,29 @@
 <template>
-  <li class="transition-colors underline-offset-4 [&:not(:first-child)]:pt-1.5">
-    <UiCollapsible v-if="link.children" v-model:open="isOpen">
-      <UiCollapsibleTrigger class="w-full border-l-2 border-transparent px-2 py-1 text-left text-muted-foreground hover:bg-muted/30 hover:text-foreground">
-        <div class="flex w-full gap-1.5">
-          <Icon v-if="link.icon" :name="link.icon" class="self-center" size="14" />
-          {{ link.title }}
-          <Icon
-            :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'" size="12"
-            class="ml-auto self-center"
-          />
-        </div>
+  <li :data-aside-section="link.children && level === 0 ? '' : undefined">
+    <template v-if="link.children && level === 0">
+      <div data-aside-heading class="sticky top-0 z-10 bg-background px-3 pb-1 pt-5 font-semibold text-foreground">
+        {{ link.title }}
+      </div>
+      <LayoutAsideTree :links="link.children" :level="level + 1" />
+    </template>
+    <UiCollapsible v-else-if="link.children" v-model:open="isOpen">
+      <UiCollapsibleTrigger
+        class="flex w-full items-center gap-1 rounded-lg py-1.5 pr-3 text-left text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
+        :class="indent"
+      >
+        {{ link.title }}
+        <Icon :name="isOpen ? 'lucide:chevron-down' : 'lucide:chevron-right'" size="14" class="text-muted-foreground" />
       </UiCollapsibleTrigger>
       <UiCollapsibleContent>
-        <LayoutAsideTree :links="link.children" :level="level + 1" />
+        <LayoutAsideTree :links="link.children" :level="level + 1" class="mt-0.5" />
       </UiCollapsibleContent>
     </UiCollapsible>
     <NuxtLink
       v-else
       :to="link._path"
-      class="flex w-full gap-1.5 px-2 py-1 text-muted-foreground transition-colors hover:bg-muted/30 hover:text-foreground"
-      :class="[isActive && 'bg-accent/45 font-medium !text-blue-600']"
+      class="block w-full rounded-lg py-1.5 pr-3 text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
+      :class="[indent, isActive && 'bg-muted font-medium !text-foreground']"
     >
-      <Icon v-if="link.icon" :name="link.icon" class="self-center" size="14" />
       {{ link.title }}
     </NuxtLink>
   </li>
@@ -35,12 +37,19 @@ const props = defineProps<{
   level: number;
 }>();
 
-const { collapse } = useConfig().value.aside;
+const route = useRoute();
 
+// Folders stay closed unless they contain the current page
+const isInside = computed(() => route.path.startsWith(`${props.link._path}/`));
 const collapsed = useCollapsedMap();
-const isOpen = ref(collapsed.value.get(props.link._path) || (props.level < 1 && !collapse));
+const isOpen = ref(collapsed.value.get(props.link._path) || isInside.value);
 watch(isOpen, (v) => {
   collapsed.value.set(props.link._path, v);
 });
-const isActive = computed(() => props.link._path === useRoute().path);
+watch(isInside, (v) => {
+  if (v)
+    isOpen.value = true;
+});
+const isActive = computed(() => props.link._path === route.path);
+const indent = computed(() => (props.level > 1 ? 'pl-9' : 'pl-3'));
 </script>
