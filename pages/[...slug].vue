@@ -9,8 +9,8 @@
       >
         <LayoutAside :is-mobile="false" />
       </aside>
-      <main class="relative py-8 md:py-10" :class="[config.toc.enable && 'lg:gap-12 lg:grid lg:grid-cols-[minmax(0,45rem)_13rem] lg:justify-center']">
-        <div class="docs-main-content docs-body w-full min-w-0">
+      <main class="relative py-8 md:py-10" :class="[showToc && 'lg:gap-12 lg:grid lg:grid-cols-[minmax(0,45rem)_13rem] lg:justify-center']">
+        <div class="docs-body w-full min-w-0" :class="{ 'docs-main-content': !page?.apiReference }">
           <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb" class="mb-4" />
 
           <div v-if="config.main.showTitle" class="space-y-3">
@@ -31,7 +31,7 @@
 
           <LayoutPrevNext />
         </div>
-        <div v-if="config.toc.enable" class="hidden lg:block">
+        <div v-if="showToc" class="hidden lg:block">
           <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden border-l pl-4">
             <LayoutToc :is-small="false" />
           </div>
@@ -45,6 +45,7 @@
 <script setup lang="ts">
 const { page } = useContent();
 const config = useConfig();
+const showToc = computed(() => config.value.toc.enable && !page.value?.apiReference);
 
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,

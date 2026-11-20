@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { fileURLToPath } from 'node:url';
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   site: {
@@ -18,6 +20,13 @@ export default defineNuxtConfig({
   plugins: [
     './plugins/medium-zoom.client.ts',
   ],
+  nitro: {
+    // Raw Markdown for /llms-full.txt.
+    serverAssets: [{ baseName: 'docs', dir: fileURLToPath(new URL('./content', import.meta.url)) }],
+    prerender: {
+      routes: ['/llms.txt', '/llms-full.txt'],
+    },
+  },
   image: {
     quality: 100,
     ipx: {

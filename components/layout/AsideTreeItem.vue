@@ -8,21 +8,21 @@
     </template>
     <UiCollapsible v-else-if="link.children" v-model:open="isOpen">
       <UiCollapsibleTrigger
-        class="flex w-full items-center gap-1 rounded-lg py-1.5 pr-3 text-left text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
-        :class="indent"
+        class="flex w-full items-center gap-1 rounded-lg px-3 py-1.5 text-left transition-colors hover:bg-muted"
+        :class="isActive || isInside ? activeText : inactiveText"
       >
         {{ link.title }}
         <Icon :name="isOpen ? 'lucide:chevron-down' : 'lucide:chevron-right'" size="14" class="text-muted-foreground" />
       </UiCollapsibleTrigger>
       <UiCollapsibleContent>
-        <LayoutAsideTree :links="link.children" :level="level + 1" class="mt-0.5" />
+        <LayoutAsideTree :links="link.children" :level="level + 1" class="ml-6 mt-0.5" />
       </UiCollapsibleContent>
     </UiCollapsible>
     <NuxtLink
       v-else
       :to="link._path"
-      class="block w-full rounded-lg py-1.5 pr-3 text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
-      :class="[indent, isActive && 'bg-muted font-medium !text-foreground']"
+      class="block w-full rounded-lg px-3 py-1.5 transition-colors hover:bg-muted"
+      :class="isActive ? ['bg-muted', activeText] : inactiveText"
     >
       {{ link.title }}
     </NuxtLink>
@@ -51,5 +51,6 @@ watch(isInside, (v) => {
     isOpen.value = true;
 });
 const isActive = computed(() => props.link._path === route.path);
-const indent = computed(() => (props.level > 1 ? 'pl-9' : 'pl-3'));
+const activeText = 'font-semibold text-black dark:text-foreground';
+const inactiveText = 'text-foreground/80 hover:text-foreground';
 </script>
